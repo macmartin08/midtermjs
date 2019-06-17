@@ -5,13 +5,13 @@ exports.index = (req, res) => {
 	Resource.find()
 	.then(resources =>{
 		res.render('resources/index',{
-			resources: resource
+			resources: resources
 		});
 	})
 	.catch(err => {
       console.error(`ERROR: ${err}`);
     });
-};
+}
 
 
 exports.show = (req, res) => {
@@ -48,6 +48,7 @@ exports.edit = (req, res) => {
 
 
 exports.create = (req, res) => {
+	console.log(req.body.resource)
 	Resource.create(req.body.resource)
     .then(() => {
       res.redirect('/resources');
@@ -55,7 +56,7 @@ exports.create = (req, res) => {
     .catch(err => {
       console.error(`ERROR: ${err}`);
     });
-}
+} 
 
 
 exports.update = (req, res) => {

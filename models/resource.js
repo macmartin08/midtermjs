@@ -25,4 +25,4 @@ const metahumanSchema = new mongoose.Schema({
 });
 
 // Exporting our resource model
-module.export = mongoose.model('metahumanSchema',metahumanSchema);
+module.exports = mongoose.model('metahumanSchema',metahumanSchema);

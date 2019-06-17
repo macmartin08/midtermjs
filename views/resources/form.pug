@@ -4,7 +4,7 @@ form(action=(resource ? `/resources/update` : "/resources"), method="POST")
 
   .form-group
     label Aliase
-    input.form-control(name="resource[aliase]", required, value=(resource ? resource.title : null))
+    input.form-control(name="resource[alise]", required)
 
   .form-group
     label Full Name
@@ -17,9 +17,11 @@ form(action=(resource ? `/resources/update` : "/resources"), method="POST")
 
   .form-group
     label Meta Type
-    select.form-control(name="[status]", required)
-      each status in ['Superhero', 'Villain','Antihero ']
-        option(value=status, selected=(blog && blog.status === status ? true : false))= status.toLowerCase()
+    select.form-control(name="resource[mettype]", required)
+      option(value="SuperHero") SuperHero
+      option(value="Villain") Villain
+      option(value="Antihero") Antihero
+
 
   .form-group
     button.btn.btn-dark(type="submit") Submit
